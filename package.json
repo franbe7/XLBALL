@@ -1,0 +1,15 @@
+{
+  "name": "xlball-stats-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MVP de bot XLBall con estadisticas persistentes",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "haxball.js": "^2.2.0",
+    "https-proxy-agent": "^7.0.4"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name" : "MVP Arena",
+  "width" : 420,
+  "height" : 200,
+  "cameraWidth" : 0,
+  "cameraHeight" : 0,
+  "maxViewWidth" : 0,
+  "cameraFollow" : "ball",
+  "spawnDistance" : 170,
+  "bg" : { "type" : "grass", "width" : 370, "height" : 170, "kickOffRadius" : 75, "cornerRadius" : 0 },
+  "vertexes" : [
+    { "x" : -370, "y" : 170, "trait" : "ballArea" },
+    { "x" : 370, "y" : 170, "trait" : "ballArea" },
+    { "x" : 370, "y" : -170, "trait" : "ballArea" },
+    { "x" : -370, "y" : -170, "trait" : "ballArea" },
+
+    { "x" : -390, "y" : 190, "trait" : "kickOffBarrier" },
+    { "x" : 390, "y" : 190, "trait" : "kickOffBarrier" },
+    { "x" : 390, "y" : -190, "trait" : "kickOffBarrier" },
+    { "x" : -390, "y" : -190, "trait" : "kickOffBarrier" },
+
+    { "x" : 0, "y" : 75, "trait" : "kickOffBarrier" },
+    { "x" : 0, "y" : -75, "trait" : "kickOffBarrier" }
+  ],
+  "segments" : [
+    { "v0" : 0, "v1" : 1, "trait" : "ballArea" },
+    { "v0" : 1, "v1" : 2, "trait" : "ballArea" },
+    { "v0" : 2, "v1" : 3, "trait" : "ballArea" },
+    { "v0" : 3, "v1" : 0, "trait" : "ballArea" },
+
+    { "v0" : 4, "v1" : 5, "trait" : "kickOffBarrier" },
+    { "v0" : 5, "v1" : 6, "trait" : "kickOffBarrier" },
+    { "v0" : 6, "v1" : 7, "trait" : "kickOffBarrier" },
+    { "v0" : 7, "v1" : 4, "trait" : "kickOffBarrier" },
+
+    { "v0" : 8, "v1" : 9, "trait" : "kickOffBarrier" }
+  ],
+  "goals" : [
+    { "p0" : [ -370, 55 ], "p1" : [ -370, -55 ], "team" : "red" },
+    { "p0" : [ 370, 55 ], "p1" : [ 370, -55 ], "team" : "blue" }
+  ],
+  "discs" : [
+    { "pos" : [ -370, 55 ], "trait" : "goalPost" },
+    { "pos" : [ -370, -55 ], "trait" : "goalPost" },
+    { "pos" : [ 370, 55 ], "trait" : "goalPost" },
+    { "pos" : [ 370, -55 ], "trait" : "goalPost" }
+  ],
+  "planes" : [
+    { "normal" : [ 0, 1 ], "dist" : -200, "trait" : "ballArea" },
+    { "normal" : [ 0, -1 ], "dist" : -200, "trait" : "ballArea" },
+    { "normal" : [ 1, 0 ], "dist" : -420, "trait" : "ballArea" },
+    { "normal" : [ -1, 0 ], "dist" : -420, "trait" : "ballArea" }
+  ],
+  "traits" : {
+    "ballArea" : { "vis" : false, "bCoef" : 1, "cMask" : [ "ball" ] },
+    "goalPost" : { "radius" : 8, "invMass" : 0, "bCoef" : 0.4 },
+    "kickOffBarrier" : { "vis" : false, "bCoef" : 0.1, "cGroup" : [ "redKO", "blueKO" ], "cMask" : [ "red", "blue" ] }
+  }
+}
